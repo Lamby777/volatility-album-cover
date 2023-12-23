@@ -31,7 +31,11 @@ def spill_effect(input_string: str) -> str:
                 stuck[line.index(ch)] = ch
 
         def process_char(col: int) -> str:
-            return stuck.get(col, line[col])
+            current_ch = line[col]
+            if not current_ch.isspace():
+                return current_ch
+
+            return stuck.get(col, current_ch)
 
         glitched_line = [process_char(col) for col in range(width)]
         res.append("".join(glitched_line))

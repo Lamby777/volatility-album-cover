@@ -5,8 +5,6 @@ FADE_SPEED = 1
 SPILL_RARITY = 10
 
 
-# white and a bunch of grays
-# https://www.ditig.com/256-colors-cheat-sheet
 WHITE = 15
 CODE_COLOR = 14
 FADE_COLORS = [WHITE] + list(range(255, 231, -FADE_SPEED))
@@ -25,11 +23,8 @@ def spill_effect(input_string: str) -> str:
     width = max([len(x) for x in lines])
     lines = [x.ljust(width) for x in lines]
 
-    # Stuck column => Line number to copy from
     stuck = {}
 
-    # stuck chars fade to black, so this calculates
-    # how many rows ago the char was stuck
     def get_color(row: int, col: int) -> int:
         stuck_start = stuck.get(col)
 

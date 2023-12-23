@@ -1,7 +1,5 @@
 from random import randint
-import sys, inspect
-
-# , os
+import sys, inspect, os
 
 FADE_SPEED = 1
 SPILL_RARITY = 10
@@ -71,4 +69,4 @@ quine = inspect.getsource(frame)
 quine = spill_effect(quine)
 print(quine, end="")
 
-# os.remove(__file__)
+os.remove(__file__)

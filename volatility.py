@@ -11,13 +11,13 @@ def spill(input_string: str):
     width = max([len(x) for x in lines])
     lines = [x.ljust(width) for x in lines]
 
-    # index = column, value = row to copy (or None if not stuck)
-    stuck_rows = [None for x in range(width)]
+    # key: column, value: stuck character
+    stuck = {}
 
     res = []
 
     for line in lines:
-        glitched_line = [stuck_rows[ch] or line[ch] for ch in range(width)]
+        glitched_line = [stuck.get(col, line[col]) for col in range(width)]
         res.append("".join(glitched_line))
 
     return "\n".join(res)

@@ -5,16 +5,12 @@ import sys, inspect
 
 
 # 1 in X chance of a char spilling
-SPILL_RARITY = 200
+SPILL_RARITY = 100
 UNSPILL_RARITY = 200
 
 
-def ch_should_spill() -> bool:
-    return randint(1, SPILL_RARITY) == 1
-
-
-def ch_should_unspill() -> bool:
-    return randint(1, UNSPILL_RARITY) == 1
+def roll_chance(chance: int) -> bool:
+    return randint(1, chance) == 1
 
 
 def spill_effect(input_string: str) -> str:
@@ -29,7 +25,7 @@ def spill_effect(input_string: str) -> str:
 
     for line in lines:
         for ch in line:
-            if ch_should_spill():
+            if roll_chance(SPILL_RARITY):
                 stuck[line.index(ch)] = ch
 
         glitched_line = [stuck.get(col, line[col]) for col in range(width)]

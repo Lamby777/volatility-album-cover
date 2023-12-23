@@ -5,8 +5,7 @@ import sys, inspect
 
 
 # 1 in X chance of a char spilling
-SPILL_RARITY = 100
-UNSPILL_RARITY = 200
+SPILL_RARITY = 20
 
 
 def roll_chance(chance: int) -> bool:
@@ -25,10 +24,16 @@ def spill_effect(input_string: str) -> str:
 
     for line in lines:
         for ch in line:
+            if ch.isspace():
+                continue
+
             if roll_chance(SPILL_RARITY):
                 stuck[line.index(ch)] = ch
 
-        glitched_line = [stuck.get(col, line[col]) for col in range(width)]
+        def process_char(col: int) -> str:
+            return stuck.get(col, line[col])
+
+        glitched_line = [process_char(col) for col in range(width)]
         res.append("".join(glitched_line))
 
     return "\n".join(res)

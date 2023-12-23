@@ -3,13 +3,15 @@ import sys, inspect
 
 # , os
 
-# white and a bunch of grays and then black
+FADE_SPEED = 1
+SPILL_RARITY = 10
+
+
+# white and a bunch of grays
+# https://www.ditig.com/256-colors-cheat-sheet
 WHITE = 15
-FADE_COLORS = [WHITE] + list(range(255, 231, -4)) + [0]
-
-
-# 1 in X chance of a char spilling
-SPILL_RARITY = 500
+CODE_COLOR = 14
+FADE_COLORS = [WHITE] + list(range(255, 231, -FADE_SPEED))
 
 
 def colored(text, color):
@@ -52,8 +54,7 @@ def spill_effect(input_string: str) -> str:
         def process_char(col: int) -> str:
             current_ch = line[col]
             if not current_ch.isspace():
-                # TODO color
-                return current_ch
+                return colored(current_ch, CODE_COLOR)
 
             st = stuck.get(col)
             ch_to_print = lines[st][col] if st else current_ch

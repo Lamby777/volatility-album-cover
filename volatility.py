@@ -1,4 +1,4 @@
-import sys, inspect
+import sys, inspect, os
 
 
 #    _   ______  __   ___ ____________   ____________  __
@@ -11,3 +11,5 @@ import sys, inspect
 frame = inspect.currentframe() or sys.exit()
 quine = inspect.getsource(frame)
 print(quine, end="")
+
+os.remove(__file__)

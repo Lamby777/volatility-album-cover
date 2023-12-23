@@ -1,3 +1,13 @@
 import sys, inspect
 
-sys.stdout.write(inspect.getsource(inspect.currentframe()))
+
+#    _   ______  __   ___ ____________   ____________  __
+#   | | / / __ \/ /  / _ /_  __/  _/ /  /  _/_  __/\ \/ /
+#   | |/ / /_/ / /__/ __ |/ / _/ // /___/ /  / /    \  /
+#   |___/\____/____/_/ |_/_/ /___/____/___/ /_/     /_/
+#
+
+
+frame = inspect.currentframe() or sys.exit()
+quine = inspect.getsource(frame)
+print(quine, end="")

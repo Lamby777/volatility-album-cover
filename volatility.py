@@ -3,9 +3,21 @@ import sys, inspect
 
 # , os
 
+# white and a bunch of grays and then black
+WHITE = 15
+FADE_COLORS = [WHITE] + list(range(255, 231, -4)) + [0]
+
 
 # 1 in X chance of a char spilling
-SPILL_RARITY = 20
+SPILL_RARITY = 500
+
+
+def colored(text, color):
+    print(f"\x1b[38;5;{color}m{text}\x1b[0m")
+
+
+# Example usage
+fade_effect("Hello, Fading World!")
 
 
 def roll_chance(chance: int) -> bool:
@@ -19,6 +31,11 @@ def spill_effect(input_string: str) -> str:
 
     # key: column, value: stuck character
     stuck = {}
+
+    # stuck chars fade to black, so this calculates
+    # how many rows ago the char was stuck
+    def get_color(row: int) -> int:
+        ago = len(lines) - stuck[column]
 
     res = []
 

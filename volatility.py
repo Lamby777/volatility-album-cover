@@ -27,9 +27,9 @@ max(ago, 0), len(FADE_COLORS) -1)];"'; an album by Cherry C."; ####          // 
 SPILL_RARITY): stuck[i]  =       lineno\n\t\tdef process(####
 col: int) ->          str:      \n\t\t\tcur_ch=line[col]####
 \t\t\tif       not cur_ch.     isspace():return colord(####
-cur_ch, FG_COLOR)
-\t\t\tst = stuck.get(col)
-\t\t\tch_to_print = lines[st][col] if st else cur_ch
+cur_ch, FG_COLOR)             \n\t\t\tst = stuck.get( ####
+col )\n\t\t\tch_to_print =   ( lines[st][col] if st  ####
+else cur_ch)
 \t\t\treturn colord(ch_to_print, getcol(lineno, col))
 \t\tglitched_line = [process(col) for col in range(width)]
 \t\tres.append("".join(glitched_line))

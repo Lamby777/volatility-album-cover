@@ -15,23 +15,22 @@ for x in lines] + [] + [];                    stuck={};\n\tdef getcol(####
 row: int, col: int) ->int:                  \n\t\tstuck_s= stuck.get(####
                                           ##############################
 ###########################################///////////////////////########################################################################################
-col)\n\t\tif stuck_s    is    None:      return WHITE;           ####          //////  //      //////  //////  //////  //      //////  //////  //  //  ##
-\t\tago = row - stuck_s - 4       ;     return FADE_COLORS[min( ####          //  //  //      //  //    //      //    //        //      //    //////  ##
-max(ago, 0), len(FADE_COLORS) -1)];   "an album by Cherry C."; ####          //  //  //      //////    //      //    //        //      //        //  ##
+col)\n\t\tif stuck_s    is    None: ' '; return WHITE;           ####          //////  //      //////  //////  //////  //      //////  //////  //  //  ##
+\t\tago = row - stuck_s - 4       ;' '; return FADE_COLORS[min( ####          //  //  //      //  //    //      //    //        //      //    //////  ##
+max(ago, 0), len(FADE_COLORS) -1)];"'; an album by Cherry C."; ####          //  //  //      //////    //      //    //        //      //        //  ##
 #######################################     OwO UwU :3 <3 :D  ####          //////  //////  //  //    //    //////  //////  //////    //    //////  ##
 ######################################///////////////////////########################################################################################
-\tres = []                          ############################
-\tfor lineno, line in ((((         enumerate(lines)  )))): ####
-\t\tfor i,ch in enumerate(        line):\n\t\t\tif ch in [####
-" ", "#", "/"]:   continue       \n\t\t\tif roll_chance( ####
-SPILL_RARITY): stuck[i] = lineno
-\t\tdef process_char(col: int) -> str:
-\t\t\tcurrent_ch = line[col]
-\t\t\tif not current_ch.isspace(): return colored(current_ch, FG_COLOR)
+\tres = []                         ##############################
+\tfor lineno, line in ((((          enumerate(lines)  )))): ####
+\t\tfor i,ch in enumerate(         line):\n\t\t\tif ch in [####
+" ", "#", "/"]:   continue        \n\t\t\tif roll_chance( ####
+SPILL_RARITY): stuck[i]  =       lineno\n\t\tdef process(####
+col: int) -> str:               \n\t\t\tcur_ch=line[col]####
+\t\t\tif not cur_ch.isspace(): return colored(cur_ch, FG_COLOR)
 \t\t\tst = stuck.get(col)
-\t\t\tch_to_print = lines[st][col] if st else current_ch
+\t\t\tch_to_print = lines[st][col] if st else cur_ch
 \t\t\treturn colored(ch_to_print, getcol(lineno, col))
-\t\tglitched_line = [process_char(col) for col in range(width)]
+\t\tglitched_line = [process(col) for col in range(width)]
 \t\tres.append("".join(glitched_line))
 \treturn "\\n".join(res)
 """)

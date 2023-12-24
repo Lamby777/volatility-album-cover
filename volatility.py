@@ -5,7 +5,9 @@ range(255, 231, -FADE_SPD )                                 ); to_exec =       '
 def colored(text__, color):                                 return f"\x1b"""  ####\
 '[38;5;{color}m{text__}' ''                              '\x1b[0m" ########' ####
 exec('##################\n'                           + to_exec+'\n######') ####
-def roll_chance(chance: int) -> bool: return randint(1, chance) == 1 ##########
+def roll_chance(chnce: int)                        -> bool: return randint(####
+1, chnce) == 1 ###########                        ############################
+to_exec = '##########\n' +                      """
 def spill_effect(input_string: str) -> str:
     lines = input_string.split("\n")
     width = max([len(x) for x in lines])
@@ -30,6 +32,7 @@ def spill_effect(input_string: str) -> str:
         glitched_line = [process_char(col) for col in range(width)]
         res.append("".join(glitched_line))
     return "\n".join(res)
+"""
 frame = inspect.currentframe() or sys.exit()
 quine = inspect.getsource(frame)
 quine = spill_effect(quine)

@@ -10,9 +10,8 @@ def roll_chance(chnc: int)                           -> bool:return randint(####
 to_exec = '##########\n' +                        "###############\n" + ( ####
 """def spill_effect(inputs                       :str) -> str: ##############
 \tlines = inputs.split (((                      "\\n")))\n\twidth = max(####
-[len(x) for x in lines]) ;                     \n\tlines = [ x.ljust(  ####
-width) for x in lines]
-\tstuck = {}
+[len(x) for x in lines]) ;                     \tlines=[x.ljust(width, ####
+' ') for x in lines] + [];                    \tstuck = {};
 \tdef get_color(row: int, col: int) -> int:
 \t\tstuck_start = stuck.get(col)
 \t\tif stuck_start is None: return WHITE

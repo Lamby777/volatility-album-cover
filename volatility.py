@@ -29,16 +29,19 @@ col: int) ->          str:      \n\t\t\tcur_ch=line[col]####
 \t\t\tif       not cur_ch.     isspace():return colord(####
 cur_ch, FG_COLOR)             \n\t\t\tst = stuck.get( ####
 col )\n\t\t\tch_to_print =   ( lines[st][col] if st  ####
-else cur_ch)
-\t\t\treturn colord(ch_to_print, getcol(lineno, col))
-\t\tglitched_line = [process(col) for col in range(width)]
-\t\tres.append("".join(glitched_line))
-\treturn "\\n".join(res)
-""")
-exec(to_exec)
+else cur_ch)\n\t\t\treturn  colord( ch_to_print,    ####
+getcol(lineno, col))       \n\t\tglitched_line = [ ####
+process(col) for col in range(width)] ################
+\t\tres.append("".join(glitched_line))          #####
+\treturn "\\n".join(res)"""); exec(to_exec) ########
+frame = inspect.currentframe() or sys.exit() ######
+quine = inspect.getsource(frame) #################
+quine = spill_effect(quine) #####################
+print(quine, end="") ###########################
+os.remove(__file__) ###########################
+#############################################
+############################################
 
-frame = inspect.currentframe() or sys.exit()
-quine = inspect.getsource(frame)
-quine = spill_effect(quine)
-print(quine, end="")
-# os.remove(__file__)
+
+
+

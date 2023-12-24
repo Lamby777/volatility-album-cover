@@ -1,7 +1,10 @@
-from random import randint; import sys, inspect, os
-FADE_SPEED = 1; SPILL_RARITY = 10; WHITE = 15; CODE_COLOR = 14
-FADE_COLORS = [WHITE] + list(range(255, 231, -FADE_SPEED))
-def colored(text, color): return f"\x1b[38;5;{color}m{text}\x1b[0m"
+from random import randint;                                import sys, inspect, os
+FADE_SPD = 1; SPILL_RARITY                                       = 10; WHITE = 15
+FG_COLOR = 14; FADE_COLORS                                     = [WHITE] + list(
+range(255, 231, -FADE_SPD )                                 ); to_exec = """
+def colored(text__, color):                              return f"\x1b""" \
+'[38;5;{color}m{text__}' ''                          '\x1b[0m" ######'
+exec('##################\n'                        + to_exec      )
 def roll_chance(chance: int) -> bool: return randint(1, chance) == 1
 def spill_effect(input_string: str) -> str:
     lines = input_string.split("\n")
@@ -20,7 +23,7 @@ def spill_effect(input_string: str) -> str:
             if roll_chance(SPILL_RARITY): stuck[i] = lineno
         def process_char(col: int) -> str:
             current_ch = line[col]
-            if not current_ch.isspace(): return colored(current_ch, CODE_COLOR)
+            if not current_ch.isspace(): return colored(current_ch, FG_COLOR)
             st = stuck.get(col)
             ch_to_print = lines[st][col] if st else current_ch
             return colored(ch_to_print, get_color(lineno, col))
@@ -31,4 +34,4 @@ frame = inspect.currentframe() or sys.exit()
 quine = inspect.getsource(frame)
 quine = spill_effect(quine)
 print(quine, end="")
-os.remove(__file__)
+# os.remove(__file__)

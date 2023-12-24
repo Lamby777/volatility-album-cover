@@ -23,7 +23,7 @@ ago, len(FADE_COLORS) -1)]        ;   "an album by Cherry C."; ####          // 
 \tres = []                          ############################
 \tfor lineno, line in enumerate(lines):\n\t\tfor i, ch in enumerate(line):
 # \t\t\tif ch.isspace(): continue
-\t\t\tif ch in [" ", "#"]: continue
+\t\t\tif ch in [" ", "#", "/"]: continue
 \t\t\tif roll_chance(SPILL_RARITY): stuck[i] = lineno
 \t\tdef process_char(col: int) -> str:
 \t\t\tcurrent_ch = line[col]

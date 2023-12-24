@@ -1,6 +1,6 @@
 from random import randint;                        import sys, inspect, os ############
 FADE_SPD = 1; SPILL_RARITY                                 = 10; ':)'; WHITE = 15 ####
-FG_COLOR = 14; FADE_COLORS                                     = [WHITE] + list( ####
+FG_COLOR = 9;  FADE_COLORS                                     = [WHITE] + list( ####
 range(255, 231, -FADE_SPD)                                 ); ''; to_exec =    ''"""
 def colored(text__, colr):                               return f"\x1b"""'' + (####
 '[38;5;{colr}m{text__}'''+                              '\x1b[0m" ########' ) ####
@@ -16,13 +16,12 @@ row: int, col: int) ->int:                  \n\t\tstuck_s= stuck.get(####
                                           ##############################
 ###########################################///////////////////////#########################################################################################
 col)\n\t\tif stuck_s    is    None:      return WHITE;           ####          //////  //      //////  //////  //////  //      //////  //////  //  //
-\t\tago = row - stuck_s           ;     return FADE_COLORS[min( ####          //  //  //      //  //    //      //    //        //      //    //////
-ago, len(FADE_COLORS) -1)]        ;   "an album by Cherry C."; ####          //  //  //      //////    //      //    //        //      //        //
+\t\tago = row - stuck_s - 4       ;     return FADE_COLORS[min( ####          //  //  //      //  //    //      //    //        //      //    //////
+max(ago, 0), len(FADE_COLORS) -1)];   "an album by Cherry C."; ####          //  //  //      //////    //      //    //        //      //        //
 #######################################     OwO UwU :3 <3 :D  ####          //////  //////  //  //    //    //////  //////  //////    //    //////
 ######################################///////////////////////#########################################################################################
 \tres = []                          ############################
 \tfor lineno, line in enumerate(lines):\n\t\tfor i, ch in enumerate(line):
-# \t\t\tif ch.isspace(): continue
 \t\t\tif ch in [" ", "#", "/"]: continue
 \t\t\tif roll_chance(SPILL_RARITY): stuck[i] = lineno
 \t\tdef process_char(col: int) -> str:

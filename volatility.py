@@ -13,10 +13,11 @@ to_exec = '##########\n' +                        "###############\n" + ( ####
 [len(x) for x in lines]) ;                     lines = [x.ljust(width) ####
 for x in lines] + [] + [];                    stuck={};\n\tdef getcol(####
 row: int, col: int) ->int:                   \n\t\tstuck_s=stuck.get(####
-col)
-\t\tif stuck_s is None: return WHITE
-\t\tago = row - stuck_s
-\t\treturn FADE_COLORS[min(ago, len(FADE_COLORS) - 1)]
+####################################################################################################
+col);  if stuck_s is None:                 return WHITE; "AN ALBUM"####
+\t\tago = row - stuck_s  ;                return FADE_COLORS[min( ####
+ago, len(FADE_COLORS) -1)]               ####### BY CHERRY C. <3 ####
+####################################################################################################
 \tres = []
 \tfor lineno, line in enumerate(lines):
 \t\tfor i, ch in enumerate(line):

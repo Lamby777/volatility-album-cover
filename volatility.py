@@ -14,16 +14,17 @@ to_exec = '##########\n' +                        "###############\n" + ( ####
 for x in lines] + [] + [];                    stuck={};\n\tdef getcol(####
 row: int, col: int) ->int:                  \n\t\tstuck_s= stuck.get(####
                                           ##############################
-###########################################///////////////////////#########################################################################################
-col)\n\t\tif stuck_s    is    None:      return WHITE;           ####          //////  //      //////  //////  //////  //      //////  //////  //  //
-\t\tago = row - stuck_s - 4       ;     return FADE_COLORS[min( ####          //  //  //      //  //    //      //    //        //      //    //////
-max(ago, 0), len(FADE_COLORS) -1)];   "an album by Cherry C."; ####          //  //  //      //////    //      //    //        //      //        //
-#######################################     OwO UwU :3 <3 :D  ####          //////  //////  //  //    //    //////  //////  //////    //    //////
-######################################///////////////////////#########################################################################################
+###########################################///////////////////////########################################################################################
+col)\n\t\tif stuck_s    is    None:      return WHITE;           ####          //////  //      //////  //////  //////  //      //////  //////  //  //  ##
+\t\tago = row - stuck_s - 4       ;     return FADE_COLORS[min( ####          //  //  //      //  //    //      //    //        //      //    //////  ##
+max(ago, 0), len(FADE_COLORS) -1)];   "an album by Cherry C."; ####          //  //  //      //////    //      //    //        //      //        //  ##
+#######################################     OwO UwU :3 <3 :D  ####          //////  //////  //  //    //    //////  //////  //////    //    //////  ##
+######################################///////////////////////########################################################################################
 \tres = []                          ############################
-\tfor lineno, line in enumerate(lines):\n\t\tfor i, ch in enumerate(line):
-\t\t\tif ch in [" ", "#", "/"]: continue
-\t\t\tif roll_chance(SPILL_RARITY): stuck[i] = lineno
+\tfor lineno, line in ((((         enumerate(lines)  )))): ####
+\t\tfor i,ch in enumerate(        line):\n\t\t\tif ch in [####
+" ", "#", "/"]:   continue       \n\t\t\tif roll_chance( ####
+SPILL_RARITY): stuck[i] = lineno
 \t\tdef process_char(col: int) -> str:
 \t\t\tcurrent_ch = line[col]
 \t\t\tif not current_ch.isspace(): return colored(current_ch, FG_COLOR)

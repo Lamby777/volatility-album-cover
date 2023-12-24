@@ -10,12 +10,12 @@ def roll_chance(chnc: int)                           -> bool:return randint(####
 to_exec = '##########\n' +                        "###############\n" + ( ####
 """def spill_effect(inputs                       :str) -> str: ##############
 \tlines = inputs.split (((                      "\\n")))\n\twidth = max(####
-[len(x) for x in lines]) ;                     \tlines=[x.ljust(width, ####
-' ') for x in lines] + [];                    \tstuck = {};
-\tdef get_color(row: int, col: int) -> int:
-\t\tstuck_start = stuck.get(col)
-\t\tif stuck_start is None: return WHITE
-\t\tago = row - stuck_start
+[len(x) for x in lines]) ;                     lines = [x.ljust(width) ####
+for x in lines] + [] + [];                    stuck={};\n\tdef getcol(####
+row: int, col: int) ->int:                   \n\t\tstuck_s=stuck.get(####
+col)
+\t\tif stuck_s is None: return WHITE
+\t\tago = row - stuck_s
 \t\treturn FADE_COLORS[min(ago, len(FADE_COLORS) - 1)]
 \tres = []
 \tfor lineno, line in enumerate(lines):
@@ -27,7 +27,7 @@ to_exec = '##########\n' +                        "###############\n" + ( ####
 \t\t\tif not current_ch.isspace(): return colored(current_ch, FG_COLOR)
 \t\t\tst = stuck.get(col)
 \t\t\tch_to_print = lines[st][col] if st else current_ch
-\t\t\treturn colored(ch_to_print, get_color(lineno, col))
+\t\t\treturn colored(ch_to_print, getcol(lineno, col))
 \t\tglitched_line = [process_char(col) for col in range(width)]
 \t\tres.append("".join(glitched_line))
 \treturn "\\n".join(res)

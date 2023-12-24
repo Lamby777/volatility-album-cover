@@ -1,11 +1,11 @@
-from random import randint;                                import sys, inspect, os
-FADE_SPD = 1; SPILL_RARITY                                       = 10; WHITE = 15
-FG_COLOR = 14; FADE_COLORS                                     = [WHITE] + list(
-range(255, 231, -FADE_SPD )                                 ); to_exec = """
-def colored(text__, color):                              return f"\x1b""" \
-'[38;5;{color}m{text__}' ''                          '\x1b[0m" ######'
-exec('##################\n'                        + to_exec      )
-def roll_chance(chance: int) -> bool: return randint(1, chance) == 1
+from random import randint;                                import sys, inspect, os ####
+FADE_SPD = 1; SPILL_RARITY                                       = 10; WHITE = 15 ####
+FG_COLOR = 14; FADE_COLORS                                     = [WHITE] + list( ####
+range(255, 231, -FADE_SPD )                                 ); to_exec =       ''"""
+def colored(text__, color):                                 return f"\x1b"""  ####\
+'[38;5;{color}m{text__}' ''                              '\x1b[0m" ########' ####
+exec('##################\n'                           + to_exec+'\n######') ####
+def roll_chance(chance: int) -> bool: return randint(1, chance) == 1 ##########
 def spill_effect(input_string: str) -> str:
     lines = input_string.split("\n")
     width = max([len(x) for x in lines])

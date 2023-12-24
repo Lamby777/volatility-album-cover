@@ -12,11 +12,15 @@ to_exec = '##########\n' +                        "###############\n" + ( ####
 \tlines = inputs.split (((                      "\\n")))\n\twidth = max(####
 [len(x) for x in lines]) ;                     lines = [x.ljust(width) ####
 for x in lines] + [] + [];                    stuck={};\n\tdef getcol(####
-row: int, col: int) ->int:                   \n\t\tstuck_s=stuck.get(####
-col)\n\t\tif stuck_s    is                  None: return WHITE; ########
-\t\tago = row - stuck_s  ;                return FADE_COLORS[min( ####
-ago, len(FADE_COLORS) -1)]               # AN ALBUM BY CHERRY C. ####
-\tres = []
+row: int, col: int) ->int:                  \n\t\tstuck_s= stuck.get(####
+                                          ##############################
+###########################################                       ##################################
+col)\n\t\tif stuck_s    is                None: return WHITE;    ####
+\t\tago = row - stuck_s  ;              return FADE_COLORS[min( ####
+ago, len(FADE_COLORS) -1)]            "an album by Cherry C."; ####
+#######################################     OwO UwU :3 <3 :D  ##################################
+\tres = []                           ############################
+
 \tfor lineno, line in enumerate(lines):
 \t\tfor i, ch in enumerate(line):
 \t\t\tif ch.isspace(): continue

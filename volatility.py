@@ -1,17 +1,17 @@
-from random import randint;                                import sys, inspect, os ####
-FADE_SPD = 1; SPILL_RARITY                                       = 10; WHITE = 15 ####
+from random import randint;                        import sys, inspect, os ############
+FADE_SPD = 1; SPILL_RARITY                                 = 10; ':)'; WHITE = 15 ####
 FG_COLOR = 14; FADE_COLORS                                     = [WHITE] + list( ####
-range(255, 231, -FADE_SPD )                                   ); to_exec =    ''"""
-def colored(text__, color):                                 return f"\x1b"""+(####
-'[38;5;{color}m{text__}' +                              '\x1b[0m" ########') ####
-exec("##################\n"                            +to_exec+"\n######") ####
-def roll_chance(chnce: int)                          ->bool:return randint(####
-1, chnce) == 1 ###########                          ##########################
-to_exec = '##########\n' +                        "##############\n" + ( ####
-"""def spill_effect(inputs                      :str) -> str: ##############
-\tlines = inputs.split (                     "\\n")
-\twidth = max([len(x) for x in lines])
-\tlines = [x.ljust(width) for x in lines]
+range(255, 231, -FADE_SPD)                                 ); ''; to_exec =    ''"""
+def colored(text__, colr):                               return f"\x1b"""'' + (####
+'[38;5;{colr}m{text__}'''+                              '\x1b[0m" ########' ) ####
+exec("#################\n"                             + to_exec+"\n######") ####
+def roll_chance(chnc: int)                           -> bool:return randint(####
+1, chnc) == 1 ############                          ###########################
+to_exec = '##########\n' +                        "###############\n" + ( ####
+"""def spill_effect(inputs                       :str) -> str: ##############
+\tlines = inputs.split (((                      "\\n")))\n\twidth = max(####
+[len(x) for x in lines]) ;                     \n\tlines = [ x.ljust(  ####
+width) for x in lines]
 \tstuck = {}
 \tdef get_color(row: int, col: int) -> int:
 \t\tstuck_start = stuck.get(col)
